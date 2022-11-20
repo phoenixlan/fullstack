@@ -87,9 +87,6 @@ services:
       - bash
       - "-c"
       - "cd ../phoenixjs-1.0 && yarn link && cd ../phoenix && yarn link @phoenixlan/phoenix.js && yarn && yarn start"
-    env_file:
-      - .npm_env
-      - .fa_env
     volumes:
       - ../../phoenixcrew-v1:/srv/phoenix
       - ../../phoenixjs-1.0:/srv/phoenixjs-1.0
