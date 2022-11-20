@@ -26,8 +26,6 @@ services:
       HOST: "http://delta.dev.phoenixlan.no:3000"
       REACT_APP_OAUTH_CLIENT_ID: "phoenix-delta-dev"
       REACT_APP_MAIN_SITE: "http://dev.phoenixlan.no:3000"
-    env_file:
-      - .npm_env
     entrypoint:
       - bash
       - "-c"
