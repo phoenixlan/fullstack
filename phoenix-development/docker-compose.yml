@@ -20,7 +20,7 @@ services:
   participate_page:
     build:
       context: ../../
-      dockerfile: devops/phoenix-development/nodejs.Dockerfile
+      dockerfile: fullstack/phoenix-development/nodejs.Dockerfile
     environment:
       BASE_URL: "http://api.dev.phoenixlan.no:3000"
       HOST: "http://delta.dev.phoenixlan.no:3000"
@@ -39,7 +39,7 @@ services:
   main_page:
     build:
       context: ../../
-      dockerfile: devops/phoenix-development/nodejs.Dockerfile
+      dockerfile: fullstack/phoenix-development/nodejs.Dockerfile
     ports:
       - 35729:35729
     volumes:
@@ -50,7 +50,7 @@ services:
   rest_static:
     build:
       context: ../../
-      dockerfile: devops/phoenix-development/nodejs.Dockerfile
+      dockerfile: fullstack/phoenix-development/nodejs.Dockerfile
     volumes:
       - ../../phoenixapi-v1/staticContent:/srv/phoenix
     logging:
@@ -80,7 +80,7 @@ services:
   crew_page:
     build:
       context: ../../
-      dockerfile: devops/phoenix-development/nodejs.Dockerfile
+      dockerfile: fullstack/phoenix-development/nodejs.Dockerfile
     entrypoint:
       - bash
       - "-c"
