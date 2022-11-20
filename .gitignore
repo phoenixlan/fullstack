@@ -1,0 +1,7 @@
+.env
+.db_env
+.npm_env
+.mailgun_env
+.fa_env
+
+phoenix-development/files
