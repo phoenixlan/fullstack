@@ -29,10 +29,10 @@ services:
     entrypoint:
       - bash
       - "-c"
-      - "cd ../phoenixjs-1.0 && yarn link && cd ../phoenix && yarn link @phoenixlan/phoenix.js && yarn && yarn start"
+      - "cd ../phoenixjs && yarn link && cd ../phoenix && yarn link @phoenixlan/phoenix.js && yarn && yarn start"
     volumes:
       - ../../phoenixparticipate-v1:/srv/phoenix
-      - ../../phoenixjs-1.0:/srv/phoenixjs-1.0
+      - ../../phoenixjs:/srv/phoenixjs
     logging:
       options:
        max-size: "1g"
@@ -84,10 +84,10 @@ services:
     entrypoint:
       - bash
       - "-c"
-      - "cd ../phoenixjs-1.0 && yarn link && cd ../phoenix && yarn link @phoenixlan/phoenix.js && yarn && yarn start"
+      - "cd ../phoenixjs && yarn link && cd ../phoenix && yarn link @phoenixlan/phoenix.js && yarn && yarn start"
     volumes:
       - ../../phoenixcrew-v1:/srv/phoenix
-      - ../../phoenixjs-1.0:/srv/phoenixjs-1.0
+      - ../../phoenixjs:/srv/phoenixjs
     logging:
       options:
        max-size: "1g"
