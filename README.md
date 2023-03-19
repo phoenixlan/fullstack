@@ -5,7 +5,7 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
 # Oppstarts-Krav
 
 - [Git](https://git-scm.com/download/win)
-- [GitHub CLI](https://cli.github.com/) (for å lett sette opp git ssh)
+- **Opsjonelt:**[ GitHub CLI](https://cli.github.com/) (for å lett sette opp git ssh)
 - Du trenger Docker og tilhørende docker verktøyer
 
   - Last ned [Docker Desktop](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe)
