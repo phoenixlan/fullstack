@@ -26,6 +26,7 @@ services:
       HOST: "http://delta.dev.phoenixlan.no:3000"
       REACT_APP_OAUTH_CLIENT_ID: "phoenix-delta-dev"
       REACT_APP_MAIN_SITE: "http://dev.phoenixlan.no:3000"
+    env_file: .participate_env
     entrypoint:
       - bash
       - "-c"
@@ -56,6 +57,23 @@ services:
     logging:
       options:
        max-size: "1g"
+  mail_worker:
+    build:
+      context: ../../rabbitmqMailWorker/
+      dockerfile: docker/development/Dockerfile
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    env_file: 
+      - .rabbitmq_env
+      - .mailgun_env
+    environment:
+      RABBITMQ_LISTEN_TOPIC: email
+    volumes:
+      - ../../phoenixmailservice-v1/phoenixMailService:/srv/phoenixMailService/phoenixMailService
+    logging:
+      options:
+       max-size: "1g"
   rest:
     build:
       context: ../../phoenixapi-v1/
@@ -63,10 +81,14 @@ services:
     ports:
       - 8080:8080
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
     env_file: 
       - .env
       - .db_env
+      - .rabbitmq_env
       - .mailgun_env
     environment:
       DEBUG: "yes"
@@ -94,9 +116,25 @@ services:
   db:
     image: postgres:alpine
     env_file: .db_env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready --username=phoenix"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     logging:
       options:
        max-size: "1g"
+  rabbitmq:
+    image: rabbitmq:alpine
+    env_file: .rabbitmq_env
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 5s
+      timeout: 30s
+      retries: 3
+    logging:
+      options:
+        max-size: "1g"
   adminer:
     depends_on:
       - db
