@@ -70,7 +70,7 @@ services:
     environment:
       RABBITMQ_LISTEN_TOPIC: email
     volumes:
-      - ../../phoenixmailservice-v1/phoenixMailService:/srv/phoenixMailService/phoenixMailService
+      - ../../rabbitmqMailWorker/rabbitmqMailWorker:/srv/rabbitmqMailWorker/rabbitmqMailWorker
     logging:
       options:
        max-size: "1g"
