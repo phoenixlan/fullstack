@@ -57,9 +57,9 @@ services:
     logging:
       options:
        max-size: "1g"
-  mail_worker:
+  rabbitmq_utility_worker:
     build:
-      context: ../../rabbitmqMailWorker/
+      context: ../../rabbitmq-util-workers/
       dockerfile: docker/development/Dockerfile
     depends_on:
       rabbitmq:
@@ -70,7 +70,7 @@ services:
     environment:
       RABBITMQ_LISTEN_TOPIC: email
     volumes:
-      - ../../rabbitmqMailWorker/rabbitmqMailWorker:/srv/rabbitmqMailWorker/rabbitmqMailWorker
+      - ../../rabbitmq-util-workers/rabbitmqUtilWorkers:/srv/rabbitmqUtilWorkers/rabbitmqUtilWorkers
     logging:
       options:
        max-size: "1g"
