@@ -26,6 +26,7 @@ services:
       HOST: "http://delta.dev.phoenixlan.no:3000"
       REACT_APP_OAUTH_CLIENT_ID: "phoenix-delta-dev"
       REACT_APP_MAIN_SITE: "http://dev.phoenixlan.no:3000"
+      STRIPE_PK: " "
     env_file: .participate_env
     entrypoint:
       - bash
@@ -113,25 +114,26 @@ services:
     logging:
       options:
        max-size: "1g"
+  info_page:
+    build:
+      context: ../../
+      dockerfile: fullstack/phoenix-development/nodejs.Dockerfile
+    environment:
+      BASE_URL: "http://api.dev.phoenixlan.no:3000"
+      REACT_APP_API_URL: "http://api.dev.phoenixlan.no:3000"
+    entrypoint:
+      - bash
+      - "-c"
+      - "cd ../phoenixjs && yarn link && cd ../phoenix && yarn link @phoenixlan/phoenix.js && yarn && yarn start"
+    volumes:
+      - ../../phoenixinfo-v1:/srv/phoenix
+      - ../../phoenixjs:/srv/phoenixjs
+    logging:
+      options:
+        max-size: "1g"
   db:
     image: postgres:alpine
     env_file: .db_env
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready --username=phoenix"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    logging:
-      options:
-       max-size: "1g"
-  rabbitmq:
-    image: rabbitmq:alpine
-    env_file: .rabbitmq_env
-    healthcheck:
-      test: rabbitmq-diagnostics -q ping
-      interval: 5s
-      timeout: 30s
-      retries: 3
     logging:
       options:
         max-size: "1g"
