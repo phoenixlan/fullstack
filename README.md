@@ -69,6 +69,19 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   MAILGUN_FROM_EMAIL= 
 
   ```
+  ```
+  // .rabbitmq_env
+  RABBITMQ_DEFAULT_USER=phoenix
+  RABBITMQ_DEFAULT_PASS=testing
+
+  RABBITMQ_USER=phoenix
+  RABBITMQ_PASSWORD=testing
+  RABBITMQ_HOST=rabbitmq
+  ```
+  ```
+  // .participate_env
+  STRIPE_PK=" "
+  ```
 - Kjør `yarn` i alle node repoene for å installere de nødvendige node modulene.
 
   - (I phoenixjs må du også kjøre `yarn build`)
