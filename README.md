@@ -74,7 +74,7 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   RABBITMQ_DEFAULT_USER=phoenix
   RABBITMQ_DEFAULT_PASS=testing
 
-  RABBITMQ_USER=phoeniX
+  RABBITMQ_USER=phoenix
   RABBITMQ_PASSWORD=testing
   RABBITMQ_HOST=rabbitmq
   ```
