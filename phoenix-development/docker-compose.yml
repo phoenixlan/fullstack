@@ -113,6 +113,23 @@ services:
     logging:
       options:
        max-size: "1g"
+  info_page:
+    build:
+      context: ../../
+      dockerfile: fullstack/phoenix-development/nodejs.Dockerfile
+    environment:
+      BASE_URL: "http://api.dev.phoenixlan.no:3000"
+      REACT_APP_API_URL: "http://api.dev.phoenixlan.no:3000"
+    entrypoint:
+      - bash
+      - "-c"
+      - "cd ../phoenixjs && yarn link && cd ../phoenix && yarn link @phoenixlan/phoenix.js && yarn && yarn start"
+    volumes:
+      - ../../phoenixinfo-v1:/srv/phoenix
+      - ../../phoenixjs:/srv/phoenixjs
+    logging:
+      options:
+        max-size: "1g"
   db:
     image: postgres:alpine
     env_file: .db_env
