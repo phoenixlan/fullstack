@@ -25,6 +25,7 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   - git@github.com:phoenixlan/phoenixjs.git
   - git@github.com:phoenixlan/phoenixmain-v1.git
   - git@github.com:phoenixlan/phoenixparticipate-v1.git
+  - git@github.com:phoenixlan/rabbitmq-util-workers.git
 - Du skal da ende opp med denne filstrukturen:
 
   ```
@@ -37,6 +38,7 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   |   +---phoenixjs
   |   +---phoenixmain-v1
   |   +---phoenixparticipate-v1
+  |   +---rabbitmq-util-workers
   ```
 - Legg til følgende filer i `fullstack/phoenix-development` mappen:
 
