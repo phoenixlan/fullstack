@@ -2,10 +2,10 @@
 
 Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de ulike Phoenix tjenestene fra pcen din.
 
-# Oppstarts-Krav
+## Oppstarts-Krav
 
 - [Git](https://git-scm.com/download/win)
-- **Opsjonelt:**[ GitHub CLI](https://cli.github.com/) (for å lett sette opp git ssh)
+- **Opsjonelt:**[GitHub CLI](https://cli.github.com/) (for å lett sette opp git ssh)
 - Du trenger Docker og tilhørende docker verktøyer
 
   - Last ned [Docker Desktop](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe)
@@ -18,7 +18,7 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
 - Git clone følgende repoer (med ssh) inne i denne mappen `git clone git@github.com:phoenixlan/fullstack.git --recurse-submodules phoenixbackend`
 - Du skal da ende opp med denne filstrukturen:
 
-  ```
+  ```text
   +---phoenixbackend
   |   +---fullstack
   |   +---phoenixapi-v1
@@ -30,9 +30,10 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   |   +---phoenixparticipate-v1
   |   +---rabbitmq-util-workers
   ```
+
 - Legg til følgende filer i `fullstack/phoenix-development` mappen:
 
-  ```
+  ```text
   // .env
   JWT_SECRET="test123!"
 
@@ -46,14 +47,16 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   STRIPE_ENDPOINT_SECRET=
 
   ```
-  ```
+
+  ```text
   // .db_env
   POSTGRES_PASSWORD=example
   POSTGRES_USER=phoenix
   DB_HOST=db
 
   ```
-  ```
+
+  ```text
   // .mailgun_env
   MAILGUN_DOMAIN= 
   MAILGUN_API= 
@@ -61,7 +64,8 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   MAILGUN_FROM_EMAIL= 
 
   ```
-  ```
+
+  ```text
   // .rabbitmq_env
   RABBITMQ_DEFAULT_USER=phoenix
   RABBITMQ_DEFAULT_PASS=testing
@@ -70,12 +74,14 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
   RABBITMQ_PASSWORD=testing
   RABBITMQ_HOST=rabbitmq
   ```
-  ```
+
+  ```text
   // .participate_env
   STRIPE_PK=" "
   ```
+
 - Kjør `yarn` i alle node repoene for å installere de nødvendige node modulene.
 
   - (I phoenixjs må du også kjøre `yarn build`)
 - Gå til `/fullstack/phoenix-development` og kjør `docker-compose up` for å starte docker containerne.
-- Fullstack development enviornment skal da være oppe og du kan så gå til f.eks. [http://dev.phoenixlan.no:3000/]()
+- Fullstack development enviornment skal da være oppe og du kan så gå til f.eks. [http://dev.phoenixlan.no:3000/](http://dev.phoenixlan.no:3000/)
