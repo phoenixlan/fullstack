@@ -1,0 +1,27 @@
+[submodule "fullstack"]
+	path = fullstack
+	url = git@github.com:phoenixlan/fullstack.git
+[submodule "phoenixapi-v1"]
+	path = phoenixapi-v1
+	url = git@github.com:phoenixlan/phoenixapi-v1.git
+[submodule "phoenixcheckin-v1"]
+	path = phoenixcheckin-v1
+	url = git@github.com:phoenixlan/phoenixcheckin-v1.git
+[submodule "phoenixcrew-v1"]
+	path = phoenixcrew-v1
+	url = git@github.com:phoenixlan/phoenixcrew-v1.git
+[submodule "phoenixinfo-v1"]
+	path = phoenixinfo-v1
+	url = git@github.com:phoenixlan/phoenixinfo-v1.git
+[submodule "phoenixjs"]
+	path = phoenixjs
+	url = git@github.com:phoenixlan/phoenixjs.git
+[submodule "phoenixmain-v1"]
+	path = phoenixmain-v1
+	url = git@github.com:phoenixlan/phoenixmain-v1.git
+[submodule "phoenixparticipate-v1"]
+	path = phoenixparticipate-v1
+	url = git@github.com:phoenixlan/phoenixparticipate-v1.git
+[submodule "rabbitmq-util-workers"]
+	path = rabbitmq-util-workers
+	url = git@github.com:phoenixlan/rabbitmq-util-workers.git

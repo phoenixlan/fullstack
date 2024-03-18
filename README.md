@@ -15,17 +15,7 @@ Docker-setup for å sette opp ett lokalt fullstack environment for å utvikle de
 
 - (Mye av denne prosessen vil forhåpentligvis automatiseres i fremtiden)
 - Lag en prosjektmappe (her kalt phoenixbackend)
-- Git clone følgende repoer (med ssh) inne i denne mappen
-
-  - git@github.com:phoenixlan/fullstack.git
-  - git@github.com:phoenixlan/phoenixapi-v1.git
-  - git@github.com:phoenixlan/phoenixcheckin-v1.git
-  - git@github.com:phoenixlan/phoenixcrew-v1.git
-  - git@github.com:phoenixlan/phoenixinfo-v1.git
-  - git@github.com:phoenixlan/phoenixjs.git
-  - git@github.com:phoenixlan/phoenixmain-v1.git
-  - git@github.com:phoenixlan/phoenixparticipate-v1.git
-  - git@github.com:phoenixlan/rabbitmq-util-workers.git
+- Git clone følgende repoer (med ssh) inne i denne mappen `git clone git@github.com:phoenixlan/fullstack.git --recurse-submodules phoenixbackend`
 - Du skal da ende opp med denne filstrukturen:
 
   ```
