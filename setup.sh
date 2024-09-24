@@ -20,7 +20,7 @@ mkdir -p "$dir" && echo "Directory created." || { echo "Failed to create directo
 cd "$dir" || { echo "Failed to enter directory."; exit 1; }
 
 # Define an array of repository names
-repos=("fullstack" "phoenixapi-v1" "phoenixcheckin-v1" "phoenixcrew-v1" "phoenixinfo-v1" "phoenixjs" "phoenixmain-v1" "phoenixparticipate-v1")
+repos=("fullstack" "phoenixapi-v1" "phoenixcheckin-v1" "phoenixcrew-v1" "phoenixinfo-v1" "phoenixjs" "phoenixmain-v1" "phoenixparticipate-v1" "rabbitmq-util-workers")
 
 # Loop through the array and clone each repository
 for repo in "${repos[@]}"; do
