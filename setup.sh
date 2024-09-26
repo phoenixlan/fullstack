@@ -80,7 +80,7 @@ echo "Running yarn in the yarn repos"
 
 cd ../../
 
-yarnefolders=("phoenixcheckin-v1" "phoenixcrew-v1" "phoenixinfo-v1" "phoenixjs" "phoenixmain-v1" "phoenixparticipate-v1")
+yarnefolders=("phoenixcheckin-v1" "phoenixcrew-v1" "phoenixinfo-v1" "phoenixjs" "phoenixmain-v1" "phoenixparticipate-v1" "phoenixapi-v1/staticContent")
 
 for yarnefolder in "${yarnefolders[@]}"; do
     if [ -d "$yarnefolder" ]; then
